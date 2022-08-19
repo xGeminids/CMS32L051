@@ -1,0 +1,4 @@
+本例程演示WDT中断及复位功能，通过在system_BAT32G135.c中设置选项字节(C0H)，使能WDT动作。
+选项字节C0H的设置值0xFB: WDTINT=1, WDTWINDOW[1:0]=2'b11, WDTON=1, WDTCS=3'b101, WDSTBYON=1
+1. 产生WDT中断，并打印RESF寄存器的值；
+2. 产生WDT复位，并打印RESF寄存器的值。

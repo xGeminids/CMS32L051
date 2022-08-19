@@ -1,0 +1,3 @@
+本例程演示PGCRC也就是Flash CRC验证功能，
+分别打印PGCRCL寄存器的初始值和
+对指定Flash区域进行CRC后的值。

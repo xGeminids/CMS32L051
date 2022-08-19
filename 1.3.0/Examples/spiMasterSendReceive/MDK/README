@@ -1,0 +1,25 @@
+本程序演示SPI作为Master， SPI00或SPI作为Slave的收发功能，并把结果通过串口打印出来。
+操作顺序：
+	1. 按下面的要求连接两个EVB板。
+	2. 先复位下载了本程序的EVB板，再复位下载了从机的EVB板。
+	3. P71/LED指示SPI MODE 0的收发结果，闪烁后点亮，表示结果OK；闪烁后熄灭，表示结果NG。
+	4. P72/LED指示SPI MODE 3的收发结果，闪烁后点亮，表示结果OK；闪烁后熄灭，表示结果NG。
+	
+需要在EVB上连接如下信号及两个EVB的VDD和GND：
+// for SPI Master and SPI Slave
+// NSS:  P63/NSS  --> P50/NSS
+// SCK:  P31/SCK  --> P51/SCK 
+// MOSI: P74/MOSI --> P16/MOSI	
+// MISO: P75/MISO <-- P17/MISO
+// INTP0:P136      <-- P136
+	
+// for SPI Master and SPI00	Slave
+// SSn:  P63/NSS  --> P62/SS00
+// SCK:  P31/SCK  --> P30/SCK00
+// MOSI: P74/MOSI --> P50/SDI00
+// MISO: P75/MISO <-- P51/SDO00
+// INTP0:P136      <-- P136
+
+
+
+

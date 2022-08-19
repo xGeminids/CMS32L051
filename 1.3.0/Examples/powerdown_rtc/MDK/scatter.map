@@ -1,0 +1,17 @@
+CODE_FLASH 0x00000000
+{
+        CoODE 0x00000000
+        {
+                * (RESET,+FIRST)
+                * (InRoot$$Sections)			
+                * (+RO)
+        }
+        DATA 0x20000100
+        {
+                * (+RW, +ZI)
+        }
+
+        ARM_LIB_STACKHEAP 0x20000ff0 EMPTY -0x00000100
+        {
+        }
+}

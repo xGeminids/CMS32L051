@@ -1,0 +1,32 @@
+CODE_FLASH 0x00000000
+{
+        VECTOR 0x00000000
+        {
+                * (RESET,+FIRST)
+        }
+}
+
+
+OTHER 0x00001000
+{
+        ROOT 0x00001000
+        {
+                * (InRoot$$Sections)
+                * (+RO)
+        }
+        CODE 0x20000200
+        {
+                * (ram_fetch_code)
+        }
+
+        DATA 0x20000800
+        {
+                * (+RW, +ZI)
+        }
+
+        ARM_LIB_STACKHEAP 0x20002000 EMPTY -0x00000800
+        {
+        }
+}
+
+

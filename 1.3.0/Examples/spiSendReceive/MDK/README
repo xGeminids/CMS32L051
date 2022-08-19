@@ -1,0 +1,19 @@
+本程序演示SPI10作为Master， SPI11作为Slave的收发功能，并把结果通过串口打印出来。
+需要在EVB上连接如下信号：
+// SCK:  No.58 pin(P04/SCK10) --> No.46 pin(P10/SCK11)
+// MOSI: No.60 pin(P02/SDO10) --> No.45 pin(P11/SDI11)
+// MISO: No.59 pin(P03/SDI10) <-- No.44 pin(P12/SDO11)
+
+如果头文件定义下列宏，就是DMA-based传输；
+如果没有定义下列宏，就是interrupt-based传输。
+userdefine.h:
+#define SPI10_WITH_DMA
+#define CTRL_DATA_SPI10 4
+
+#define SPI11_WITH_DMA
+#define CTRL_DATA_SPI11 6
+
+另外，为了方便调试，通过DBGSTOPCR寄存器，可以在调试程序时暂停通讯系外设传送数据，防止出现OverRun或UnderRun。
+如果设置DBGSTOPCR寄存器的FRZEN1比特为1，在连接Debugger调试程序时，当程序停止
+（比如程序停止运行或停在断点处）时，通信系UART/SPI/简易IIC, IICA暂停传送数据。
+

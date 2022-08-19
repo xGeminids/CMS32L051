@@ -1,0 +1,5 @@
+本例程演示IrDA收发功能。IrDA是把UART2的TxD编码为符合IrDA规范的IrTxd；把符合IrDA规范的IrRxd解码成UART2的RxD。
+
+备注：
+1. 必须和UART2功能配合才能实现IrDA。
+2. 在userdefine中定义USE_IRDA宏，则UART2进行IrDA收发。如果不定义USE_IRDA宏，则UART2进行普通UART收发。

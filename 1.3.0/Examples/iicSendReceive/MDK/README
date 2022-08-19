@@ -1,0 +1,4 @@
+本例程演示简易IIC20/IIC21的收发功能。
+由于IIC必须主从配合来完成通信，而简易IIC只能作为主设备。
+请使用下载了iicaSlaveSendReceive程序的EVB板作为从设备来进行验证。
+

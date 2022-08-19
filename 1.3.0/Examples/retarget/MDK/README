@@ -1,0 +1,3 @@
+本例程演示retarget功能，暨把scanf/printf/getchar/putchar等函数的输入输出重定向到串口。
+串口调试工具（如Tera Term）可以作为标准输入输出，来和目标板上MCU中的程序互动。
+程序默认的串口波特率19200， 数据长度8位，校验位None, 停止位1位。

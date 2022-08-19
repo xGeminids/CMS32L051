@@ -1,0 +1,4 @@
+本例程演示adcBurnInTest功能：
+ADC对P22的输入电压进行连续采样
+采样结果用DMA读取到uint16_t get_value[256]中
+每隔一定间隔后通过串口打印一个ADC的转换结果

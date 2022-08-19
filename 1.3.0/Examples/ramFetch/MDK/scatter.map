@@ -1,0 +1,32 @@
+CODE_FLASH 0x00000000
+{
+        VECTOR 0x20000200
+        {
+                * (VECTOR,+FIRST)
+        }
+}
+
+
+OTHER 0x00001000
+{
+        ROOT 0x00001000
+        {
+				startup_CMS32L051.o(RESET,+FIRST)
+				system_CMS32L051.o(+RO)
+                * (InRoot$$Sections)			
+        }
+        CODE 0x20000300
+        {
+                * (+RO)
+        }
+
+        DATA 0x20001800
+        {
+                * (+RW, +ZI)
+        }
+
+        ARM_LIB_STACKHEAP 0x20002000 EMPTY -0x00000100
+        {
+        }
+}
+

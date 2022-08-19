@@ -1,0 +1,9 @@
+本例程演示flash擦写操作。MCU支持selfPrograming，也就是程序在Flash中执行的时候擦写Flash。
+1. 演示使用EraseSector, ProgramPage函数擦写DataFlash区域
+2. 演示使用flash_write函数擦写Code Flash区域
+3. 验证flash_write函数写空白区域的功能
+
+推荐使用flash_write函数擦写Data Flash或Code Flash，因为它能自动判断是否需要擦除。
+如果目标区域时空白的，它会省略擦除，直接写入。并且支持按Byte写入。
+
+注意，不要擦写程序本身所在的区域。

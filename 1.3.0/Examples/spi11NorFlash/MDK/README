@@ -1,0 +1,12 @@
+本程序演示SPI11作为Master， 读写SPI Flash的功能，并把结果通过串口打印出来。
+需要在EVB上连接如下信号：
+// SS11: P62/SS11   --> CS#
+// SCK:  P10/SCLK11 --> SCK
+// MOSI: P12/SDO11  --> SI/SIO0	
+// MISO: P11/SDI11  <-- SO/SIO1	
+
+如果头文件定义下列宏，就用DMA进行FlashPageProgram和FlashFastRead的数据阶段的传输；
+如果没有定义下列宏，就用CPU进行FlashPageProgram和FlashFastRead的数据阶段的传输；
+userdefine.h:
+#define SPI11_WITH_DMA
+#define CTRL_DATA_SPI11 6

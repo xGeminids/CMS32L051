@@ -1,0 +1,23 @@
+本程序演示SPI作为Slave， SPI11作为Master的收发功能，并把结果通过串口打印出来。
+需要在EVB上连接如下信号：
+// SCK:  P10/SCK11 --> P51/SCK
+// MOSI: P12/SDO11 --> P16/MOSI
+// MISO: P11/SDI11 <-- P17/MISO
+
+如果头文件定义下列宏，就是DMA-based传输；
+如果没有定义下列宏，就是interrupt-based传输。
+userdefine.h:
+#define SPI11_WITH_DMA
+#define CTRL_DATA_SPI11 2
+
+#define SPI_WITH_DMA
+#define CTRL_DATA_SPI 4
+
+另外，请在头文件中定义SPI_SLAVE_PORT_GROUP1
+userdefine.h:
+#define SPI_SLAVE_PORT_GROUP1
+//#define SPI_MASTER_PORT_GROUP1
+//#define SPI_SLAVE_PORT_GROUP2
+//#define SPI_MASTER_PORT_GROUP2
+//#define SPI_SLAVE_PORT_GROUP3
+//#define SPI_MASTER_PORT_GROUP3

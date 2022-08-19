@@ -1,0 +1,3 @@
+本例程演示WDT中断功能，通过在system_BAT32G135.c中设置选项字节(C0H)，使能WDT动作。
+选项字节C0H的设置值0xF9: WDTINT=1, WDTWINDOW[1:0]=2'b11, WDTON=1, WDTCS=3'b100, WDSTBYON=1
+因为WDSTBYON=1, 在睡眠或深度睡眠模式时，WDT依然运行，所以WDT中断可以唤醒CPU。
